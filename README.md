@@ -1,2 +1,2 @@
-# HackerRank
-Attempted Hackerrank Solutions for future Reference
+# HackerEarth
+Attempted HackerEarth Solutions for future Reference
