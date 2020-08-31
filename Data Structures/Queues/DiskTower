@@ -1,0 +1,16 @@
+maxdisks = int(input())
+l = list(map(int,input().split()))
+d = {}
+
+for i in l:
+    d[i] = True
+    s = ''
+    if i == maxdisks:
+        s += str(i) + ' '
+        maxdisks -= 1
+        while (maxdisks in d):
+            s += str(maxdisks) + ' '
+            maxdisks -= 1
+        print(s)
+    else:
+        print(' ')
