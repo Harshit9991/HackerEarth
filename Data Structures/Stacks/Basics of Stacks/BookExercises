@@ -1,0 +1,27 @@
+from sys import stdin
+ 
+def main(data,n):
+    stack = []
+    amin = []
+    counter = 0
+    for i in range(n):
+        temp = data[i].split()
+        if temp[0]=='-1':
+            while int(stack[-1][0])!=amin[-1]:
+                stack.pop()
+                amin.pop()
+                counter += 1
+            print(counter, stack[-1][1])
+            stack.pop()
+            amin.pop()
+            counter = 0
+        elif int(temp[0])>0:
+            stack.append(temp)
+            if not amin: amin.append(int(temp[0]))
+            else:
+                amin.append(min(int(temp[0]),amin[-1]))
+ 
+if __name__=='__main__':
+    n = int(input())
+    data = stdin.readlines()
+    main(data, n)
