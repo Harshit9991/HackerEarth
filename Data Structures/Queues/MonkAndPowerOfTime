@@ -1,0 +1,14 @@
+n = int(input())
+calling = [int(x) for x in input().split()]
+ideal = [int(x) for x in input().split()]
+count = 0
+for i in ideal:
+    if i == calling[0]:
+        count += 1
+        calling.remove(i)
+    else:
+        index = calling.index(i)
+        calling = calling[index:] + calling[:index]
+        calling.remove(i)
+        count += index+1
+print(count)
